@@ -37,5 +37,35 @@ namespace NetDeveloperTest.Controllers
             }
             return View();
         }
+
+        public IActionResult Edit(int? Id)
+        {
+            if (Id == null || Id == 0 )
+            {
+                return NotFound();
+            }
+
+            var job = _context.Job.Find(Id);
+            //if (job == null)
+            //{
+            //    return NotFound();
+            //}
+
+            return View(job);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Job Job)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Update(Job);
+                _context.SaveChanges();
+                TempData["message"] = "Job Record Edited";
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
     }
 }
