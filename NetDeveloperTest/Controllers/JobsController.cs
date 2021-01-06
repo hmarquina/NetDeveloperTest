@@ -20,5 +20,16 @@ namespace NetDeveloperTest.Controllers
             IEnumerable<Job> listJobs = _context.Job;
             return View(listJobs);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        public IActionResult Create(Job Job)
+        {
+            if ()
+            return View();
+        }
     }
 }

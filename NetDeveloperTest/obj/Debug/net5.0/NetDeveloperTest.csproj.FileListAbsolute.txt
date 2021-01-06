@@ -430,3 +430,4 @@ C:\Users\Henry\source\repos\NetDeveloperTest\NetDeveloperTest\bin\Debug\net5.0\z
 C:\Users\Henry\source\repos\NetDeveloperTest\NetDeveloperTest\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\Henry\source\repos\NetDeveloperTest\NetDeveloperTest\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\Henry\source\repos\NetDeveloperTest\NetDeveloperTest\obj\Debug\net5.0\Razor\Views\Jobs\Index.cshtml.g.cs
+C:\Users\Henry\source\repos\NetDeveloperTest\NetDeveloperTest\obj\Debug\net5.0\Razor\Views\Jobs\Create.cshtml.g.cs

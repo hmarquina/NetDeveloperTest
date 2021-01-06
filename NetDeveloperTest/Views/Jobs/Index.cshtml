@@ -39,6 +39,10 @@
                         <td>@item.Description</td>
                         <td>@item.CreatedAt</td>
                         <td>@item.ExpiresAt</td>
+                        <td>
+                            <a asp-controller="Jobs" asp-action="Edit" asp-route-id="@item.JobID" class="btn btn-warning">Edit Job</a>
+                            <a asp-controller="Jobs" asp-action="Delete" asp-route-id="@item.JobID" class="btn btn-warning">Delete Job</a>
+                        </td>
                     </tr>
                     }
 
