@@ -26,6 +26,7 @@ namespace NetDeveloperTest.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Create(Job Job)
         {
             if (ModelState.IsValid)
@@ -55,6 +56,7 @@ namespace NetDeveloperTest.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Edit(Job Job)
         {
             if (ModelState.IsValid)
@@ -66,6 +68,39 @@ namespace NetDeveloperTest.Controllers
             }
             return View();
         }
+
+
+        public IActionResult Delete(int? Id)
+        {
+            if (Id == null || Id == 0)
+            {
+                return NotFound();
+            }
+
+            var job = _context.Job.Find(Id);
+            //if (job == null)
+            //{
+            //    return NotFound();
+            //}
+
+            return View(job);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteJob(int? Id)
+        {
+
+            var job = _context.Job.Find(Id);
+
+                _context.Remove(job);
+                _context.SaveChanges();
+                TempData["message"] = "Job Record Deleted";
+                return RedirectToAction("Index");
+         }
+
+
+
 
     }
 }

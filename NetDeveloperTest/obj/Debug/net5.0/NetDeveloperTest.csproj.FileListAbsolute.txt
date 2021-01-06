@@ -432,3 +432,4 @@ C:\Users\Henry\source\repos\NetDeveloperTest\NetDeveloperTest\bin\Debug\net5.0\r
 C:\Users\Henry\source\repos\NetDeveloperTest\NetDeveloperTest\obj\Debug\net5.0\Razor\Views\Jobs\Index.cshtml.g.cs
 C:\Users\Henry\source\repos\NetDeveloperTest\NetDeveloperTest\obj\Debug\net5.0\Razor\Views\Jobs\Create.cshtml.g.cs
 C:\Users\Henry\source\repos\NetDeveloperTest\NetDeveloperTest\obj\Debug\net5.0\Razor\Views\Jobs\Edit.cshtml.g.cs
+C:\Users\Henry\source\repos\NetDeveloperTest\NetDeveloperTest\obj\Debug\net5.0\Razor\Views\Jobs\Delete.cshtml.g.cs
