@@ -70,31 +70,35 @@ namespace NetDeveloperTest.Controllers
         }
 
 
-        public IActionResult Delete(int? Id)
+        public IActionResult Delete(int? id)
         {
-            if (Id == null || Id == 0)
+            if (id == null || id == 0)
             {
                 return NotFound();
             }
 
-            var job = _context.Job.Find(Id);
-            //if (job == null)
-            //{
-            //    return NotFound();
-            //}
+            var job = _context.Job.Find(id);
+            if (job == null)
+            {
+                return NotFound();
+            }
 
             return View(job);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult DeleteJob(int? Id)
+        public IActionResult JobDelete(int? id)
         {
 
-            var job = _context.Job.Find(Id);
-
-                _context.Remove(job);
+            var job = _context.Job.Find(id);
+            if (job == null)
+            {
+                return NotFound();
+            }
+                _context.Job.Remove(job);
                 _context.SaveChanges();
+
                 TempData["message"] = "Job Record Deleted";
                 return RedirectToAction("Index");
          }
