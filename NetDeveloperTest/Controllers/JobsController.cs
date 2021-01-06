@@ -25,10 +25,16 @@ namespace NetDeveloperTest.Controllers
         {
             return View();
         }
-
+        [HttpPost]
         public IActionResult Create(Job Job)
         {
-            if ()
+            if (ModelState.IsValid)
+            {
+                _context.Add(Job);
+                _context.SaveChanges();
+                TempData["message"] = "Job Record Created";
+                return RedirectToAction("Index");
+            }
             return View();
         }
     }

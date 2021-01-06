@@ -7,6 +7,17 @@
 <h1>Jobs Menu</h1>
 
 <div class="container">
+    @if (TempData["message"] != null)
+    {
+        <div class="alert alert-warning alert-dismissible fade show" role="alert" >
+            @TempData["message"]
+            <button type="button" class="close" date-dismiss="alert" aria-label="close">
+                <span aria-hidden="true">$times;</span>
+            </button>
+        </div>
+
+    }
+
     <div class="row">
         <div class="col-sm">
             <h3>Jobs List</h3>
@@ -41,7 +52,7 @@
                         <td>@item.ExpiresAt</td>
                         <td>
                             <a asp-controller="Jobs" asp-action="Edit" asp-route-id="@item.JobID" class="btn btn-warning">Edit Job</a>
-                            <a asp-controller="Jobs" asp-action="Delete" asp-route-id="@item.JobID" class="btn btn-warning">Delete Job</a>
+                            <a asp-controller="Jobs" asp-action="Delete" asp-route-id="@item.JobID" class="btn btn-danger">Delete Job</a>
                         </td>
                     </tr>
                     }
