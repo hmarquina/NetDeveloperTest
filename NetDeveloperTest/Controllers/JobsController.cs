@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NetDeveloperTest.Data;
+using NetDeveloperTest.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,14 @@ namespace NetDeveloperTest.Controllers
     public class JobsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        public JobsController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
         public IActionResult Index()
         {
-            return View();
+            IEnumerable<Job> listJobs = _context.Job;
+            return View(listJobs);
         }
     }
 }
